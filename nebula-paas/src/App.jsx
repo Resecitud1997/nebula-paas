@@ -27,14 +27,14 @@ function App() {
     simulateDeployment(newProj.id);
   };
 
-  const simulateDeployment = (id) => {
-    const steps = [
-      { msg: '> Installing dependencies (npm install)...', delay: 1500 },
-      { msg: '> Running build script...', delay: 3000 },
-      { msg: '> Build completed successfully.', delay: 4500 },
-      { msg: '> Starting container...', delay: 6000 },
-      { msg: '>> Server listening on port 3000', delay: 7000 },
-    ];
+ // Ejemplo de conexión real
+const deployReal = async (nombre) => {
+   // Esto conecta tu web con un servidor real
+   await fetch('https://api.mi-nebula-real.com/crear-servidor', {
+      method: 'POST',
+      body: JSON.stringify({ name: nombre })
+   });
+}
 
     steps.forEach(({ msg, delay }) => {
       setTimeout(() => {
