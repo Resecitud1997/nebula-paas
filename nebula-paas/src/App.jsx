@@ -6,7 +6,7 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newProjectName, setNewProjectName] = useState('');
 
-  // Simulación de "Backend"
+  // Simulación de "Backend" - Estas funciones deben estar DENTRO de App()
   const createProject = () => {
     if (!newProjectName) return;
     
@@ -58,6 +58,7 @@ function App() {
     setProjects(projects.filter(p => p.id !== id));
   };
 
+  // EL RETURN DEBE IR AQUÍ. Todo lo anterior es la lógica y estado.
   return (
     <div className="min-h-screen bg-background text-gray-200 p-8 font-mono">
       {/* Header */}
@@ -156,6 +157,6 @@ function App() {
       )}
     </div>
   );
-}
+} // <--- ESTA ES LA ÚNICA LLAVE DE CIERRE DE LA FUNCIÓN APP()
 
 export default App;
