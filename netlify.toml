@@ -17,7 +17,7 @@
 
   # 3. PUBLISH DIRECTORY (Directorio de publicación):
   # La carpeta de salida (dist) se encuentra ahora DENTRO de la base.
-  publish = "nebula-paas/dist"
+  publish = "nebula-paas/nebula-paas"
 
 # ==================================
 # REDIRECCIONES DE FRONTEND (SPA)
