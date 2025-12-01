@@ -6,9 +6,9 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [newProjectName, setNewProjectName] = useState('');
 
-  // Simulación de "Backend" - Estas funciones deben estar DENTRO de App()
-  const createProject = () => {
-    if (!newProjectName) return;
+  // Antes: const createProject = () => {
+const createProject = async () => { // <--- AÑADE 'async' AQUÍ
+  if (!newProjectName) return;
     
     const newProj = {
       id: Date.now(),
@@ -24,7 +24,7 @@ function App() {
     setNewProjectName('');
 
     // Simular proceso de despliegue (Build Process)
-    simulateDeployment(newProj.id);
+    simulateDeployment(newProj.id); deployReal(newProjectName);
   };
 
  // Ejemplo de conexión real
@@ -41,7 +41,7 @@ const deployReal = async (nombre) => {
         setProjects(prev => prev.map(p => {
           if (p.id === id) {
             return { ...p, logs: [...p.logs, msg] };
-          }
+ simulateDeployment(newProj.id);         }
           return p;
         }));
       }, delay);
