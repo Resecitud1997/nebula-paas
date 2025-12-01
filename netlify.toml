@@ -1,30 +1,13 @@
-# Archivo: netlify.toml
-
-# ==================================
-# SECCIÓN PRINCIPAL DE CONFIGURACIÓN
-# ==================================
-
-# Define el contexto de producción (despliegues normales)
 [build]
-  # 1. BASE DIRECTORY (Directorios base): 
-  # Le dice a Netlify que navegue a esta carpeta antes de ejecutar el build.
-  # Esto soluciona el error ENOENT: package.json not found.
-  base = "nebula-paas/"
-
-  # 2. BUILD COMMAND (Comando de construcción):
-  # El comando que se ejecuta DESPUÉS de navegar a la base.
+  # Entrar a la carpeta del proyecto
+  base = "nebula-paas"
+  
+  # Construir el sitio
   command = "npm run build"
+  
+  # La carpeta 'dist' está justo aquí (no hay que repetir nebula-paas)
+  publish = "dist"
 
-  # 3. PUBLISH DIRECTORY (Directorio de publicación):
-  # La carpeta de salida (dist) se encuentra ahora DENTRO de la base.
-  publish = "nebula-paas/nebula-paas"
-
-# ==================================
-# REDIRECCIONES DE FRONTEND (SPA)
-# ==================================
-
-# Define una redirección para manejar las rutas del lado del cliente (React)
-# para evitar errores 404 si el usuario accede directamente a una ruta interna (ej: /dashboard).
 [[redirects]]
   from = "/*"
   to = "/index.html"
