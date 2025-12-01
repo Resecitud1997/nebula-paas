@@ -157,7 +157,6 @@ const deployReal = async (nombre) => {
       )}
     </div>
   );
-}
 } // <--- ESTA ES LA ÚNICA LLAVE DE CIERRE DE LA FUNCIÓN APP()
 
 export default App;
