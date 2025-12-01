@@ -34,7 +34,6 @@ const deployReal = async (nombre) => {
       method: 'POST',
       body: JSON.stringify({ name: nombre })
    });
-}
 
     steps.forEach(({ msg, delay }) => {
       setTimeout(() => {
